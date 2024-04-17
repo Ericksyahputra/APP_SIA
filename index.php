@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    header('location:dashboard.php');
+}else{
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,6 +23,13 @@
                 <form action="authentication.php" method="post">
                     <h3 class="text-center">Login System</h3>
                     <hr>
+                    <?php
+                    if(isset($_SESSION['pesan'])){
+                        ?>
+                        <div class="alert alert-danger"><?=$_SESSION['pesan'];?></div>
+                        <?php
+                    }
+                    ?>
                     <div class="input-group mb-3">
                         <span class="input-group-text">
                             <i class="bi bi-person-fill"></i>
@@ -40,3 +55,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
 </body>
 </html>
+<?php
+}
+session_destroy();
+?>
