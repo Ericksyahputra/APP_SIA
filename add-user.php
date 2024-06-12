@@ -10,12 +10,12 @@ jabatan,
  hak_akses
  ) 
  VALUES (
- 'erick',
+ 'admin',
  '$password',
- 'Erick Syahputra',
- 'erick@gmail.com',
- 'Karyawan',
- 'karyawan'
+ 'Adminstrator',
+ 'admin@gmail.com',
+ 'admin',
+ 'admin'
  )
  ";
 if ($koneksi->query($query)) {
